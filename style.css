@@ -1,0 +1,223 @@
+/* إعدادات عامة */
+:root {
+    --black: #07101a;
+    --blue: #0f4df5;
+    --orange: #ff7a18;
+    --orange-dark: #d35400;
+    --gray-dark: #152535;
+    --text: #edf2f7;
+    --muted: #a0aec0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at top left, rgba(15,77,245,0.18), transparent 28%),
+                radial-gradient(circle at bottom right, rgba(255,122,24,0.18), transparent 28%),
+                var(--black);
+    color: var(--text);
+}
+
+/* تنسيق شريط التنقل */
+header {
+    background: linear-gradient(180deg, #090f17 0%, #101b28 100%);
+    color: var(--text);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+header h1 {
+    font-size: 1.6rem;
+    letter-spacing: 0.04em;
+    margin: 0;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+header a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+header a:hover {
+    color: var(--orange);
+}
+
+/* قسم المحتوى الرئيسي */
+main {
+    padding: 3rem 1.5rem;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+main h2 {
+    color: var(--orange);
+    margin-bottom: 1.5rem;
+    font-size: 2.3rem;
+}
+
+.tools-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    align-items: stretch;
+}
+
+.tool-card {
+    background: linear-gradient(180deg, #0c1724 0%, #111b2d 100%);
+    border: 1px solid rgba(255,122,24,0.18);
+    border-radius: 22px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.tool-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(255,122,24,0.4);
+    box-shadow: 0 26px 70px rgba(0,0,0,0.32);
+}
+
+.tool-card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    filter: saturate(1.1) contrast(1.05);
+}
+
+.tool-card h3,
+.tool-card p,
+.tool-card .features {
+    margin: 0;
+}
+
+.tool-card h3 {
+    color: var(--text);
+    font-size: 1.35rem;
+}
+
+.tool-card p {
+    color: var(--muted);
+    line-height: 1.7;
+    font-size: 0.97rem;
+}
+
+.card-body {
+    padding: 22px;
+    display: grid;
+    gap: 14px;
+    flex: 1;
+    text-align: right;
+}
+
+.tag {
+    display: inline-block;
+    background-color: var(--blue);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 8px;
+}
+
+.features li {
+    color: var(--text);
+    font-size: 0.92rem;
+    position: relative;
+    padding-right: 22px;
+}
+
+.features li::after {
+    content: '•';
+    position: absolute;
+    right: 0;
+    color: var(--orange);
+}
+
+.action-btn {
+    background: linear-gradient(135deg, var(--orange), #ff9f43);
+    color: #07101a;
+    border: none;
+    padding: 14px 18px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    width: 100%;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(255,122,24,0.32);
+    background: linear-gradient(135deg, #ff8a00, #ffc05b);
+}
+
+footer {
+    background: #070d18;
+    color: var(--muted);
+    text-align: center;
+    padding: 24px 16px;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255,122,24,0.14);
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.96rem;
+}
+
+@media (max-width: 860px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    main {
+        padding: 2.5rem 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    main h2 {
+        font-size: 2rem;
+    }
+
+    .tools-container {
+        gap: 18px;
+    }
+
+    .card-body {
+        padding: 18px;
+    }
+}
